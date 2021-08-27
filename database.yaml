@@ -3,5 +3,5 @@ mysql_user: 'root'
 # Enter your password in field below
 mysql_password: 'Password2021'
 mysql_db: 'mysql_test'
-mysql_port: 3030
-# mysql_port: 3306
+# mysql_port: 3030
+mysql_port: 3306
