@@ -172,7 +172,7 @@ def findSOC():
             cur = mysql.connection.cursor()
             list_desc = []
             for soc in list_data:
-                resultValue = cur.execute("select Description from ayj_socdescription where SOC = %d;" %soc)
+                resultValue = cur.execute("select Description from AYJ_SOCDescription where SOC = %d;" %soc)
                 if resultValue > 0:
                     # print(cur.fetchall())
                     availableSOC = cur.fetchall()
