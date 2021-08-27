@@ -235,7 +235,7 @@ def findSOC():
                 current_Date = datetime.now().date()
                 # formatted_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
                 cur = mysql.connection.cursor()
-                insert_socdata_query = """INSERT INTO AYJ_SOCData_Test(ID, JD, Date_Of_Entry, M1_SOC_1, M1_SOC_2, M1_SOC_3,
+                insert_socdata_query = """INSERT INTO AYJ_SOCData(ID, JD, Date_Of_Entry, M1_SOC_1, M1_SOC_2, M1_SOC_3,
                 M2_SOC_1, M2_SOC_2, M2_SOC_3) VALUES ( %s, %s, %s, %s, %s, %s, %s, %s, %s) """ 
                 socdata_records = (p_id, back, current_Date, dict_model_soc['M1'], 
                 dict_model_soc['M2'], dict_model_soc['M3'], dict_model_soc['M4'], dict_model_soc['M5'], dict_model_soc['M6'])
@@ -244,7 +244,7 @@ def findSOC():
                 # cur.close()
 
                 # cur = mysql.connection.cursor()
-                insert_soctrue_query = """INSERT INTO AYJ_SOCTrue_Test(SOC_ID, SOC, Flag) VALUES ( %s, %s, %s) """ 
+                insert_soctrue_query = """INSERT INTO AYJ_SOCTrue(SOC_ID, SOC, Flag) VALUES ( %s, %s, %s) """ 
                 soctrue_records = (p_id, soc_val, flag)
                 cur.execute(insert_soctrue_query, soctrue_records)
                 mysql.connection.commit()
